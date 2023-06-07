@@ -1,8 +1,8 @@
 # 👉ChatGPT-Proxy
 
-ℹ️ 近期因为 OpenAI 的风控有大量 API Key 或账号被封禁。因为 Cloudflare 勉强也算云服务商，而从云服务商请求 API 是再正常不过的操作，所以使用 Cloudfalre Worker 代理地址后，理论上也会降低被封禁的概率。
+ℹ️ 第一个原因：近期OpenAI加大了风控，有大量APIKey或账号被封禁。因为Cloudflare也算云服务商，而从云服务商请求 API 是再正常不过的操作，所以使用 Cloudfalre Worker 代理地址后，理论上也会降低被封禁的概率。
 
-ℹ️ 事实证明 ChatGPT 是足够火爆的，火爆到什么程度呢，其 API 一经推出便获得了 GFW 的认证。在 Twitter 上看到很多人都在为解决无法正常访问 OpenAI 的 API 而苦恼，最常见解决方案是使用一台服务器来进行反向代理，但这样又徒增了一些成本。因为之前在公司的业务上遇到过类似问题，当时老板找到了一个还不错的几乎零成本解决方案，试了一下现在仍然可以用来解决 OpenAI 的 API 无法访问的问题，所以在这里推荐给大家。
+ℹ️ 另一个原因：国内一直都访问不了OpenAI的官方接口，最常见解决方案是使用一台服务器来进行反向代理，但这样又徒增了一些成本，所以我们推荐用Cloudfalre Worker 代理的方式来解决 OpenAI 的 API 无法访问的问题。
 
 👉该方案的主要思路是使用 Cloudflare 的 Workers 来代理 OpenAI 的 API 地址，配合自己的域名即可在境内实现访问。因为 Cloudflare Workers 有每天免费 10 万次的请求额度，也有可以免费注册的域名，所以几乎可以说是零成本。而且该方法理论上支持所有被认证的网站，而不只是 OpenAI。
 
@@ -10,35 +10,30 @@
 
 使用这个方案需要你有以下东西：
 
-一个没有被 GFW 认证的域名（没有的话也可以到 godaddy 注册一个，相信对于大家来说注册域名不是啥大问题）
-
+一个域名（可以到 godaddy 注册一个，相信对于大家来说注册域名不是啥大问题）
 注册一个 Cloudflare 账号
-
 ℹ️ 请不要直接使用本教程示例中的地址，因为随时会被关闭。也不要使用任何其他人搭建的不受信任的地址，因为有 api key 被盗取的可能。
 
 ## 基本步骤
 
-1、新建一个 Cloudflare Worker
-
-2、将worker.js中的代码粘贴到 Worker 中并部署
-
-3、给 Worker 绑定一个没有被 GFW 认证的域名
-
-4、使用自己的域名代替 api.openai.com
-
-5、如果具体步骤有问题，可以参考下面的详细版教程。
+1. 新建一个 Cloudflare Worker
+2. 将worker.js中的代码粘贴到 Worker 中并部署
+3. 给 Worker 绑定一个没有被 GFW 认证的域名
+4. 使用自己的域名代替 api.openai.com
+5. 如果遇到问题，可以参考下面的详细版教程。
 
 ## 将域名 NS 转到 Cloudflare
 
 如果域名已经托管在 Cloudflare 的忽略这一步即可。
-
 Cloudflare Workers 的域名绑定仅支持托管在 Cloudflare 上的域名，所以得先将域名的 NS 转到 Cloudflare。
 
 没有 Cloudflare 账号的话可以注册一个，具体注册细节就不多说了。注册或登录到 Cloudflare 的管理界面后，点击侧边栏的 “Websites” ，然后点击 “Add a Site” 按钮准备将域名转到 Cloudflare：
-
+<img src="https://raw.githubusercontent.com/GoGPTAI/ChatGPT-Proxy/main/images/cloudflare_1.png"/>
 在 “Enter your site (example.com)” 处输入要转入的域名后，点击 “Add Site”：
-
-根据 Cloudflare 的提示，在域名注册商处将 NS 修改到 Cloudflare 指定的地址，等待域名解析成功后，即可进行后续操作。
+<img src="https://raw.githubusercontent.com/GoGPTAI/ChatGPT-Proxy/main/images/cloudflare_2.png"/>
+根据 Cloudflare 的提示，在域名注册商处将 NS 修改到 Cloudflare 指定的地址，等待域名解析成功后，即可进行后续操作。这儿我们参考的是阿里云的DNS服务商修改
+<img src="https://raw.githubusercontent.com/GoGPTAI/ChatGPT-Proxy/main/images/cloudflare_3.png"/>
+<img src="https://raw.githubusercontent.com/GoGPTAI/ChatGPT-Proxy/main/images/cloudflare_4.png"/>
 
 ## 创建一个 Cloudflare Worker
 
