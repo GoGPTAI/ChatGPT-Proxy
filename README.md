@@ -1,8 +1,10 @@
 #  👉ChatGPT-Proxy
 
-ℹ️ 第一个原因：国内一直都访问不了OpenAI的官方接口，最常见解决方案是使用一台服务器来进行反向代理，但这样又徒增了一些成本，所以我们推荐用Cloudfalre Worker 代理的方式来解决 OpenAI 的 API 无法访问的问题。
+分享一个ChatGPT代理接口的获取方式，首先说明一下原因：
 
-ℹ️ 另一个原因：近期OpenAI加大了风控，有大量APIKey或账号被封禁。因为Cloudflare也算云服务商，而从云服务商请求 API 是再正常不过的操作，所以使用 Cloudfalre Worker 代理地址后，理论上也会降低被封禁的概率。
+第一个原因：国内一直都访问不了OpenAI的官方接口，最常见解决方案是使用一台服务器来进行反向代理，但这样又徒增了一些成本，所以我们推荐用Cloudfalre Worker 代理的方式来解决 OpenAI 的 API 无法访问的问题。
+
+另一个原因：近期OpenAI加大了风控，有大量APIKey或账号被封禁。因为Cloudflare也算云服务商，而从云服务商请求 API 是再正常不过的操作，所以使用 Cloudfalre Worker 代理地址后，理论上也会降低被封禁的概率。
 
 👉该方案的主要思路是使用 Cloudflare 的 Workers 来代理 OpenAI 的 API 地址，配合自己的域名即可在境内实现访问。因为 Cloudflare Workers 有每天免费 10 万次的请求额度，也有可以免费注册的域名，所以几乎可以说是零成本。而且该方法理论上支持所有被认证的网站，而不只是 OpenAI。
 
@@ -122,29 +124,16 @@ async function handleRequest(request) {
 
 # 联系
 
-- Discord: <a href="https://discord.gg/r28WhZUtK8" target="_blank">YueYang Studios</a>
-- Twitter: <a href="https://twitter.com/YueYangDev" target="_blank">@YueYangDev</a>
-- 微博: <a href="https://weibo.com/u/1747186121" target="_blank">@乐阳YueYang</a>
+- QQ: 471384214
+- 微信：jack881026
 
 ## 微信群交流
-
-<div align="center">
 <img width="400" src="https://raw.githubusercontent.com/GoGPTAI/ChatGPT-Proxy/main/images/wxq2.jpeg" />
-</div>
 
-## 微信公众号
-
-微信群交流
-
-<div align="center">
+## 微信公众号: AI创新工坊
 <img width="400" src="https://raw.githubusercontent.com/GoGPTAI/ChatGPT-Proxy/main/images/qrcode_430.jpg" />
-</div>
 
-## 👉GoGPT 官网 - [ChatGPT直接使用](https://gogpt.vip)
-
-## 星标历史记录
-
-[![Star History Chart](https://api.star-history.com/svg?repos=GoGPTAI/ChatGPT-Proxy&type=Date)](https://star-history.com/#GoGPTAI/ChatGPT-Proxy&Date)
+## 👉 GoGPT 官网 - [ChatGPT直接使用](https://gogpt.vip)
 
 ### License
 
