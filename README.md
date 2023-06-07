@@ -1,5 +1,9 @@
 #  👉ChatGPT-Proxy
 
+ChatGPT是由[OpenAI](https://www.openai.com/)训练的一款大型语言模型，能够和你进行任何领域的对话。
+
+## [ChatGPT 国内中文版 GoGPT](https://gogpt.vip/?channel=git)
+
 分享一个ChatGPT代理接口的获取方式，首先说明一下原因：
 
 第一个原因：国内一直都访问不了OpenAI的官方接口，最常见解决方案是使用一台服务器来进行反向代理，但这样又徒增了一些成本，所以我们推荐用Cloudfalre Worker 代理的方式来解决 OpenAI 的 API 无法访问的问题。
