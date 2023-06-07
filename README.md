@@ -102,7 +102,7 @@ async function handleRequest(request) {
 
 <img src="https://raw.githubusercontent.com/GoGPTAI/ChatGPT-Proxy/main/images/cloudflare_worker_5.png"/>
 
-输入域名后点击 “Add Custom Domain”，根据提示修改域名的 DNS 记录。因为我的域名是托管在 Cloudflare 上的，所以无需手动更改 DNS 记录，如果域名没有托管在 Cloudfalre 上，可以根据相关提示自行配置。 ⚠️ 据评论区提示，目前只支持 NS 托管在 Cloudflare 上的域名，如果不介意，可以点击 Cloudflare 侧边栏的 “Websites”，然后点击 “Add a Site” 按钮，根据提示将域名的 NS 记录指定到 Cloudflare。
+输入域名后点击 “Add Custom Domain”，根据提示修改域名的 DNS 记录。因为我的域名是托管在 Cloudflare 上的，所以无需手动更改 DNS 记录，如果域名没有托管在 Cloudfalre 上，可以根据相关提示自行配置。 目前只支持 NS 托管在 Cloudflare 上的域名。
 
 <img src="https://raw.githubusercontent.com/GoGPTAI/ChatGPT-Proxy/main/images/cloudflare_worker_6.png"/>
 
@@ -121,6 +121,14 @@ async function handleRequest(request) {
 <br/>
 
 🥰 如果本文对你有帮助，请给我的GitHub点个Star哦。
+
+
+# ChatGPT相关
+有兴趣看我发布的其他两个项目：
+
+苹果Siri智能助手：[ChatGPT-Siri](https://github.com/GoGPTAI/ChatGPT-Siri)
+
+ChatGPT中文指南：[ChatGPT-Prompt](https://github.com/GoGPTAI/ChatGPT-Prompt)
 
 # 联系
 
