@@ -141,7 +141,8 @@ ChatGPT中文指南：[ChatGPT-Prompt](https://github.com/GoGPTAI/ChatGPT-Prompt
 ## 微信公众号: AI创新工坊
 <img width="400" src="https://raw.githubusercontent.com/GoGPTAI/ChatGPT-Proxy/main/images/qrcode_430.jpg" />
 
-## 👉 GoGPT 官网 - [ChatGPT直接使用](https://gogpt.vip)
+
+## 👉 GoGPT 官网 - [ChatGPT直接使用](http://gogpt.vip/?channel=git)
 
 ### License
 
