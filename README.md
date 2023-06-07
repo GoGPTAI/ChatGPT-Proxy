@@ -1,6 +1,10 @@
-# cloudflare-proxy
+# ChatGPT-Proxy
 
-> 好多调用 ChatGPT 的客户端都是直接使用的 api.openai.com，这个接口很显然是访问不通的，好在有些良心作者还提供了一个自定义 API 域名的入口，在 Cloudflare Worker 上写了一个简单的代理，用起来顺手多了，省得我一直在本机挂全局代理。—— [Barret李靖](https://twitter.com/Barret_China/status/1642725620798087168)
+> OpenAI的官方接口：api.openai.com，这个接口很显然是访问不通的，
+
+ℹ️ 近期因为 OpenAI 的风控有大量API Key或账号被封禁。因为Cloudflare 勉强也算云服务商，而从云服务商请求 API 是再正常不过的操作，所以使用 Cloudfalre Worker 代理地址后，理论上也会降低被封禁的概率。
+ℹ️ 事实证明 ChatGPT 是足够火爆的，火爆到什么程度呢，其API一经推出便获得了 GFW 的认证。在 Twitter 上看到很多人都在为解决无法正常访问 OpenAI 的 API 而苦恼，最常见解决方案是使用一台服务器来进行反向代理，但这样又徒增了一些成本。因为之前在公司的业务上遇到过类似问题，当时老板找到了一个还不错的几乎零成本解决方案，试了一下现在仍然可以用来解决 OpenAI 的 API 无法访问的问题，所以在这里推荐给大家。
+👉 该方案的主要思路是使用 Cloudflare 的 Workers 来代理 OpenAI 的 API 地址，配合自己的域名即可在境内实现访问。因为 Cloudflare Workers 有每天免费 10 万次的请求额度，也有可以免费注册的域名，所以几乎可以说是零成本。而且该方法理论上支持所有被认证的网站，而不只是 OpenAI。
 
 <img src="https://user-images.githubusercontent.com/2698003/229402093-8e4f55e8-95e5-4adc-92dd-2fb6bfacce42.png" width="800" />
 
