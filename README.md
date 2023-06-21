@@ -140,7 +140,7 @@ ChatGPT中文指南：[ChatGPT-Prompt](https://github.com/GoGPTAI/ChatGPT-Prompt
 - 微信：jack881026
 
 ## 微信群交流
-<img width="400" src="https://imgs.weimei.life/go/jrsq.jpeg" />
+<img width="400" src="https://imgs.weimei.life/go/jrsq_628.jpg" />
 
 ## 微信公众号: AI创新工坊
 <img width="400" src="https://raw.githubusercontent.com/GoGPTAI/ChatGPT-Proxy/main/images/qrcode_430.jpg" />
